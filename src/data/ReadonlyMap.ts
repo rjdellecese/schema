@@ -1,6 +1,7 @@
 /**
  * @since 1.0.0
  */
+import * as Effect from "@effect/io/Effect"
 import { pipe } from "@fp-ts/core/Function"
 import { IdentifierId } from "@fp-ts/schema/annotation/AST"
 import * as H from "@fp-ts/schema/annotation/Hook"
@@ -28,7 +29,7 @@ const parser = <K, V>(
         pipe(
           Array.from(u.entries()),
           (us) => items(us, options),
-          I.map((as) => new Map(as))
+          Effect.map((as) => new Map(as))
         )
   )
 }

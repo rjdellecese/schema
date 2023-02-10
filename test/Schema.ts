@@ -437,6 +437,6 @@ describe.concurrent("Schema", () => {
     type A = null | { readonly a: A }
     const schema: S.Schema<A> = S.lazy(() => S.union(S.null, schema))
     const is = P.is(schema)
-    expect(is(null)).toEqual(true) // Maximum call stack size exceeded
+    expect(is(null)).toEqual(true) // Infinite recursion, out of memory.
   })
 })

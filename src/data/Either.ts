@@ -1,6 +1,7 @@
 /**
  * @since 1.0.0
  */
+import * as Effect from "@effect/io/Effect"
 import type { Either } from "@fp-ts/core/Either"
 import * as E from "@fp-ts/core/Either"
 import { pipe } from "@fp-ts/core/Function"
@@ -23,8 +24,8 @@ const parser = <E, A>(left: P.Parser<E>, right: P.Parser<A>): P.Parser<Either<E,
       !E.isEither(u) ?
         PR.failure(PR.type(schema.ast, u)) :
         E.isLeft(u) ?
-        pipe(decodeLeft(u.left, options), I.map(E.left)) :
-        pipe(decodeRight(u.right, options), I.map(E.right))
+        pipe(decodeLeft(u.left, options), Effect.map(E.left)) :
+        pipe(decodeRight(u.right, options), Effect.map(E.right))
   )
 }
 

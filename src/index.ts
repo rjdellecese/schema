@@ -49,14 +49,6 @@ export {
   /**
    * @since 1.0.0
    */
-  isFailure,
-  /**
-   * @since 1.0.0
-   */
-  isSuccess,
-  /**
-   * @since 1.0.0
-   */
   success
 } from "@fp-ts/schema/ParseResult"
 

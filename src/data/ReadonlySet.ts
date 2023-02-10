@@ -1,6 +1,7 @@
 /**
  * @since 1.0.0
  */
+import * as Effect from "@effect/io/Effect"
 import { pipe } from "@fp-ts/core/Function"
 import { IdentifierId } from "@fp-ts/schema/annotation/AST"
 import * as H from "@fp-ts/schema/annotation/Hook"
@@ -25,7 +26,7 @@ const parser = <A>(item: P.Parser<A>): P.Parser<ReadonlySet<A>> => {
         pipe(
           Array.from(u.values()),
           (us) => items(us, options),
-          I.map((as) => new Set(as))
+          Effect.map((as) => new Set(as))
         )
   )
 }

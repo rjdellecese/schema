@@ -2,7 +2,6 @@
  * @since 1.0.0
  */
 
-import * as E from "@fp-ts/core/Either"
 import { pipe } from "@fp-ts/core/Function"
 import * as O from "@fp-ts/core/Option"
 import type { Predicate, Refinement } from "@fp-ts/core/Predicate"
@@ -16,12 +15,6 @@ import type { Parser } from "@fp-ts/schema/Parser"
 import * as PR from "@fp-ts/schema/ParseResult"
 import type { Pretty } from "@fp-ts/schema/Pretty"
 import type * as S from "@fp-ts/schema/Schema"
-
-/** @internal */
-export const flatMap = E.flatMap
-
-/** @internal */
-export const map = E.map
 
 /** @internal */
 export const mutableAppend = <A>(self: Array<A>, a: A): NonEmptyReadonlyArray<A> => {

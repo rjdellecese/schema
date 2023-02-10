@@ -1,6 +1,7 @@
 /**
  * @since 1.0.0
  */
+import * as Effect from "@effect/io/Effect"
 import { pipe } from "@fp-ts/core/Function"
 import type { Option } from "@fp-ts/core/Option"
 import * as O from "@fp-ts/core/Option"
@@ -23,7 +24,7 @@ const parser = <A>(value: P.Parser<A>): P.Parser<Option<A>> => {
         PR.failure(PR.type(schema.ast, u)) :
         O.isNone(u) ?
         PR.success(O.none()) :
-        pipe(decodeValue(u.value, options), I.map(O.some))
+        pipe(decodeValue(u.value, options), Effect.map(O.some))
   )
 }
 

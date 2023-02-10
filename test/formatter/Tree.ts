@@ -1,3 +1,4 @@
+import * as Effect from "@effect/io/Effect"
 import * as E from "@fp-ts/core/Either"
 import { pipe } from "@fp-ts/core/Function"
 import { isNumber } from "@fp-ts/core/Number"
@@ -25,13 +26,15 @@ describe.concurrent("Tree", () => {
       S.union(S.string, S.number),
       (u): u is string | number => isString(u) || isNumber(u)
     )
-    expect(pipe(parser.parse(null), E.mapLeft(_.formatErrors))).toEqual(E.left(`1 error(s) found
-└─ Expected string or number, actual null`))
+    expect(pipe(parser.parse(null), Effect.runSyncEither, E.mapLeft(_.formatErrors))).toEqual(
+      E.left(`1 error(s) found
+└─ Expected string or number, actual null`)
+    )
   })
 
   it("formatErrors/ lazy", () => {
     const parser = I.fromRefinement(json, I.isJson)
-    expect(pipe(parser.parse(undefined), E.mapLeft(_.formatErrors))).toEqual(
+    expect(pipe(parser.parse(undefined), Effect.runSyncEither, E.mapLeft(_.formatErrors))).toEqual(
       E.left(`1 error(s) found
 └─ Expected <anonymous Lazy schema>, actual undefined`)
     )

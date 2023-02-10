@@ -1,5 +1,23 @@
 # @fp-ts/schema
 
+## 0.2.0
+
+### Minor Changes
+
+- [#80](https://github.com/fp-ts/schema/pull/80) [`c6c139c`](https://github.com/fp-ts/schema/commit/c6c139c6dc232b747b2293de18c8154bdb243ef5) Thanks [@tim-smart](https://github.com/tim-smart)! - update to fp-ts/core 0.2 and effect/data
+
+### Patch Changes
+
+- [#71](https://github.com/fp-ts/schema/pull/71) [`6285f6b`](https://github.com/fp-ts/schema/commit/6285f6bed41bae22ce19131c7def27cc498126fc) Thanks [@mikearnaldi](https://github.com/mikearnaldi)! - Add support for Data
+
+- [#74](https://github.com/fp-ts/schema/pull/74) [`a904d82`](https://github.com/fp-ts/schema/commit/a904d8214d15d49e11b874f864e036c39148444e) Thanks [@mikearnaldi](https://github.com/mikearnaldi)! - Add support for data/Brand
+
+- [#79](https://github.com/fp-ts/schema/pull/79) [`d87a6d8`](https://github.com/fp-ts/schema/commit/d87a6d884014eda4a7f334fe97a392ecad333e74) Thanks [@jessekelly881](https://github.com/jessekelly881)! - extended data/Number to include positive, negative, nonPositive, nonNegative
+
+- [#75](https://github.com/fp-ts/schema/pull/75) [`ce39918`](https://github.com/fp-ts/schema/commit/ce399183140e428d901e978de66b616ea3860dcd) Thanks [@mikearnaldi](https://github.com/mikearnaldi)! - Support brand errors
+
+- [#78](https://github.com/fp-ts/schema/pull/78) [`e378691`](https://github.com/fp-ts/schema/commit/e3786911b5231505ce3d16e783ed75a5ac342044) Thanks [@jessekelly881](https://github.com/jessekelly881)! - added data/ReadonlyArray and filtes
+
 ## 0.1.3
 
 ### Patch Changes

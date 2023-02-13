@@ -140,7 +140,7 @@ It is useful when you want to ensure that the value being decoded is in the corr
 
 ```ts
 try {
-  const person = P.decodeOrThrow(Person)({});
+  const person = S.decodeOrThrow(Person)({});
   console.log(person);
 } catch (e) {
   console.error("Decoding failed:");
